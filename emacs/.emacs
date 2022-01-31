@@ -9,24 +9,24 @@
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; Automatically refresh packages
-;;(package-initialize)
-;;(package-refresh-contents)
+(package-initialize)
+(package-refresh-contents)
 
-;; Automatically install packages
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
 
-;; Global company-mode
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode t)
 
-;; Omnisharp Hook
-(require 'lsp)
-(add-hook 'csharp-mode-hook #'lsp-deferred)
+
+
+
+
+
+
+
+
+
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -41,3 +41,20 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(package-install-selected-packages)
+
+ ;; Automatically install packages
+ (unless (package-installed-p 'evil)
+   (package-install 'evil))
+
+ ;; Enable Evil
+ (require 'evil)
+ (evil-mode 1)
+
+ ;; Global company-mode
+ (require 'company)
+ (add-hook 'after-init-hook 'global-company-mode t)
+
+ ;; Omnisharp Hook
+ (require 'lsp)
+ (add-hook 'csharp-mode-hook #'lsp-deferred)
